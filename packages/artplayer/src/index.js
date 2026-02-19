@@ -263,7 +263,7 @@ if (utils.isBrowser) {
     if (Artplayer.LOG_VERSION) {
       // eslint-disable-next-line no-console
       console.log(
-        `%c ArtPlayer %c ${Artplayer.version} %c https://artplayer.org`,
+        `%c DDPlayer %c ${Artplayer.version} %c https://ddplayer.dev`,
         'color: #fff; background: #5f5f5f',
         'color: #fff; background: #4bc729',
         '',

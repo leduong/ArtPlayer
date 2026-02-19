@@ -1,9 +1,10 @@
-import { def, errorHandle, has, isMobile } from '../utils'
+import { def, errorHandle, has, isMobile, isYoutube } from '../utils'
 import autoOrientation from './autoOrientation'
 import autoPlayback from './autoPlayback'
 import fastForward from './fastForward'
 import lock from './lock'
 import miniProgressBar from './miniProgressBar'
+import youtube from './youtube'
 
 export default class Plugins {
   constructor(art) {
@@ -32,6 +33,10 @@ export default class Plugins {
       this.add(fastForward)
     }
 
+    if (isYoutube(option.url)) {
+      this.add(youtube)
+    }
+
     for (let index = 0; index < option.plugins.length; index++) {
       this.add(option.plugins[index])
     }
@@ -41,9 +46,8 @@ export default class Plugins {
     this.id += 1
     const result = plugin.call(this.art, this.art)
     if (result instanceof Promise) {
-      return result.then(res => this.next(plugin, res))
-    }
-    else {
+      return result.then((res) => this.next(plugin, res))
+    } else {
       return this.next(plugin, result)
     }
   }
