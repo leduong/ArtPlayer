@@ -2,6 +2,7 @@ import { def, errorHandle, has, isMobile, isYoutube } from '../utils'
 import autoOrientation from './autoOrientation'
 import autoPlayback from './autoPlayback'
 import fastForward from './fastForward'
+import hlsPlugin from './hls'
 import lock from './lock'
 import miniProgressBar from './miniProgressBar'
 import youtube from './youtube'
@@ -35,6 +36,11 @@ export default class Plugins {
 
     if (isYoutube(option.url)) {
       this.add(youtube)
+    }
+
+    // HLS control plugin, auto add if url is m3u8
+    if (option.url && String(option.url).includes('.m3u8')) {
+      this.add(hlsPlugin)
     }
 
     for (let index = 0; index < option.plugins.length; index++) {

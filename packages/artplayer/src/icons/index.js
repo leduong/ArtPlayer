@@ -2,6 +2,7 @@ import airplay from 'bundle-text:./airplay.svg'
 import arrowLeft from 'bundle-text:./arrow-left.svg'
 import arrowRight from 'bundle-text:./arrow-right.svg'
 import aspectRatio from 'bundle-text:./aspect-ratio.svg'
+import audio from 'bundle-text:./audio.svg'
 import check from 'bundle-text:./check.svg'
 import close from 'bundle-text:./close.svg'
 import config from 'bundle-text:./config.svg'
@@ -17,6 +18,7 @@ import pause from 'bundle-text:./pause.svg'
 import pip from 'bundle-text:./pip.svg'
 import play from 'bundle-text:./play.svg'
 import playbackRate from 'bundle-text:./playback-rate.svg'
+import quality from 'bundle-text:./quality.svg'
 import screenshot from 'bundle-text:./screenshot.svg'
 import setting from 'bundle-text:./setting.svg'
 import state from 'bundle-text:./state.svg'
@@ -30,6 +32,8 @@ import { def, getIcon } from '../utils'
 export default class Icons {
   constructor(art) {
     const icons = {
+      audio,
+      quality,
       loading,
       state,
       play,
